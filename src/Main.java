@@ -154,3 +154,14 @@ public class myArrayList<T> implements MyList<T> {
         size++;
     }
 
+    public boolean remove(T item) {
+        for (int i = 0; i < size; i++) {
+            if (elements[i].equals(item)) {
+                System.arraycopy(elements, i + 1, elements, i, size - i - 1);
+                size--;
+                return true;
+            }
+        }
+        return false;
+    }
+
