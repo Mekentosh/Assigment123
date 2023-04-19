@@ -8,17 +8,8 @@ public class MyArrayList<T> implements MyList<T> {
         size = 0;
     }
 
-    @Override
     public int size() {
         return size;
     }
 
-    @Override
-    public boolean contains(Object o) {
-        for (int i = 0; i < size; i++) {
-            if (elements[i].equals(o)) {
-                return true;
-            }
-        }
-        return false;
-    }
+
