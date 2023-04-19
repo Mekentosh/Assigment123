@@ -110,3 +110,11 @@ public class myArrayList<T> implements MyList<T> {
     private Object[] elements;
     private int size;
 
+    public myArrayList() {
+        this.elements = new Object[INITIAL_CAPACITY];
+        this.size = 0;
+    }
+
+    public int size() {
+        return size;
+    }
