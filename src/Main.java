@@ -165,3 +165,12 @@ public class myArrayList<T> implements MyList<T> {
         return false;
     }
 
+    public T remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        T item = (T) elements[index];
+        System.arraycopy(elements, index + 1, elements, index, size - index - 1);
+        size--;
+        return item;
+    }
