@@ -174,3 +174,40 @@ public class myArrayList<T> implements MyList<T> {
         size--;
         return item;
     }
+
+    public void clear() {
+        size = 0;
+        elements = new Object[INITIAL_CAPACITY];
+    }
+
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        return (T) elements[index];
+    }
+
+
+    public int indexOf(Object o) {
+        for (int i = 0; i < size; i++) {
+            if (elements[i].equals(o)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int lastIndexOf(Object o) {
+        for (int i = size - 1; i >= 0; i--) {
+            if (elements[i].equals(o)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void sort() {
+        Arrays.sort(elements, 0, size);
+    }
+
+}
